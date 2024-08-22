@@ -4,7 +4,7 @@ This is a Python implementation of the classic Asteroids game.
 
 ## Project Description
 
-Test project for python programming.
+Test project for python programming. Experimenting with the py.game module.
 
 ## Installation
 
