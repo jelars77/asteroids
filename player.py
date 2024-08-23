@@ -5,6 +5,8 @@ from constants import PLAYER_SPEED
 class Player(CircleShape):
     def __init__(self, x, y, radius):
         super().__init__(x, y, radius)
+        self.__class__.containers[0].add(self)  # adds to 'updatable'
+        self.__class__.containers[1].add(self)  # adds to 'drawable'
         self.position = pygame.Vector2(x, y)
         self.rotation = 0
     
