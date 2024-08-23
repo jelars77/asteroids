@@ -9,6 +9,8 @@ class Player(CircleShape):
         self.__class__.containers[1].add(self)  # adds to 'drawable'
         self.position = pygame.Vector2(x, y)
         self.rotation = 0
+        self.image = pygame.Surface((2 * radius, 2 * radius), pygame.SRCALPHA)  # Transparent surface
+        self.rect = self.image.get_rect(center=(x, y))
     
     def rotate(self, dt):
         self.rotation += PLAYER_TURN_SPEED * dt
@@ -30,7 +32,7 @@ class Player(CircleShape):
         if keys[pygame.K_s]:
             self.movement(-dt)
 
-
+        self.rect.center = self.position
 
     def triangle(self):
         forward = pygame.Vector2(0, 1).rotate(self.rotation)
