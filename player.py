@@ -50,3 +50,8 @@ class Player(CircleShape):
     def move(self, dt):
         forward = pygame.Vector2(0, 1).rotate(self.rotation)
         self.position += forward * PLAYER_SPEED * dt
+    
+    def draw_game_over(screen):
+        font = pygame.font.Font(None, 74)  # None for default font, 74 for size
+        text = font.render("GAME OVER", True, (255, 255, 255))  # White color text
+        screen.blit(text, (SCREEN_WIDTH // 2 - text.get_width() // 2, SCREEN_HEIGHT // 2 - text.get_height() // 2))
